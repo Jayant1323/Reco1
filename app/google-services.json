@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "409866193977",
+    "firebase_url": "https://hand-wirtten-reco.firebaseio.com",
+    "project_id": "hand-wirtten-reco",
+    "storage_bucket": "hand-wirtten-reco.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409866193977:android:0d1f2ef01088ef4d",
+        "android_client_info": {
+          "package_name": "com.jay.reco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409866193977-jq2afgaue12fej0uffueq7eqgjrkq8jp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6sckHsq5NE1c8hni5NMtXisTML6lkhfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "409866193977-jq2afgaue12fej0uffueq7eqgjrkq8jp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

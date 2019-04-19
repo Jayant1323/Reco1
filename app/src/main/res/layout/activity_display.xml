@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityDisplay"
+    android:background="@drawable/rad_bg">
+
+    <TextView
+        android:id="@+id/textID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed"
+        android:text="First Screen"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+</RelativeLayout>
