@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ActivityDisplay"
     android:background="@drawable/rad_bg">
 
-    <TextView
+    <EditText
         android:id="@+id/textID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:fontFamily="sans-serif-condensed"
+        android:gravity="top"
         android:text="First Screen"
-        android:textAlignment="center"
-        android:textSize="30dp" />
+        android:textAlignment="gravity"
+        android:textSize="20dp" />
 
 </RelativeLayout>

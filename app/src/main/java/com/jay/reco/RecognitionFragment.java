@@ -2,8 +2,6 @@ package com.jay.reco;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -17,7 +15,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
@@ -35,7 +32,7 @@ public class RecognitionFragment extends Fragment {
     public RecognitionFragment() {
     }
 
-    private final int TEXT_RECO_REQ_CODE = 1000;
+    private final int TEXT_RECO_REQ_CODE = 20000;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,7 +62,7 @@ public class RecognitionFragment extends Fragment {
         if(requestCode==TEXT_RECO_REQ_CODE){
             if(resultCode == RESULT_OK){
                 Bitmap Photo = (Bitmap) Objects.requireNonNull(data.getExtras()).get("data");
-                TextRecognisation(Photo);
+                TextRecognition(Photo);
             }
             else if(resultCode == RESULT_CANCELED){
                 Toast.makeText(getContext(),"Operation Cancelled by User",Toast.LENGTH_LONG).show();
@@ -76,19 +73,15 @@ public class RecognitionFragment extends Fragment {
         }
     }
 
-    private void TextRecognisation(Bitmap Photo) {
+    private void TextRecognition(Bitmap Photo) {
         FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(Photo);
         FirebaseVisionTextRecognizer detector = FirebaseVision.getInstance()
                 .getOnDeviceTextRecognizer();
-        Task<FirebaseVisionText> Result;
-        Result = detector.processImage(image).addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
+        detector.processImage(image).addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
             @Override
             public void onSuccess(FirebaseVisionText firebaseVisionText) {
                 for (FirebaseVisionText.TextBlock block: firebaseVisionText.getTextBlocks()) {
                     String text = block.getText();
-                    Point[] cornerPoints = block.getCornerPoints();
-                    Rect boundingBox = block.getBoundingBox();
-                    //Toast.makeText(MainActivity.this,"Element: "+element.getText(),Toast.LENGTH_LONG).show();
                     Intent myIntent = new Intent(getActivity(),ActivityDisplay.class);
                     myIntent.putExtra("Text", text);
                     startActivity(myIntent);

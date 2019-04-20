@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="225dp"
+    android:layout_height="250dp"
     android:background="@drawable/header_bg"
     android:gravity="bottom"
     android:orientation="vertical"
@@ -24,13 +24,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Jayant Kodam"
+        android:text="Username"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="jayantkodam@gmail.com" />
+        android:text="Email Address" />
 
 </LinearLayout>
